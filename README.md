@@ -40,6 +40,22 @@ $result = LightDB::find('south_asian_countries', 'country like ?', ['b%'], ['cou
 
 ```
 
+### Note
+
+LightDB allows generation of query like
+```
+
+with following example
+
+Update table set column = column + 1 where id = 1
+```
+
+to have such type of query, put `..` and end of column name in key.
+
+```
+$item = LightDB::update('south_asian_countries', 'id = ? ', [1] , ['population..' => 'population + 1']);
+```
+
 ## Methods
 ### getInstance
 
